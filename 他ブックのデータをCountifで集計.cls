@@ -13,13 +13,13 @@ End Sub
 
 'モジュール化
  
-Function CrossCount(FileLink, SheetNo, RangeArea, CountText, OutputSheet, OutputCell)
+Function CrossCount(FileLink, SheetNo, RangeArea, CountText)
 
 Dim MyWorkbook As Workbook
 Set MyWorkbook = Application.Workbooks.Open(FileLink)
  
-v = Application.WorksheetFunction.CountIf(MyWorkbook.Sheets(SheetNo).Range(RangeArea), CountText)
-ThisWorkbook.Sheets(OutputSheet).Range(OutputCell).Value = v
+CrossCount = Application.WorksheetFunction.CountIf(MyWorkbook.Sheets(SheetNo).Range(RangeArea), CountText)
+
 
 End Function
 
